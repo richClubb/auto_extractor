@@ -9,7 +9,7 @@ We have a good size wood shop with a large number of machine tools and it's frus
 
 # Requirements
 
-* Ability to turn the main dust extractor on and off
+* Ability to turn the main dust extractor on and off with overrun after the machine is turned off.
 * Ability to control the blast gates for each of the machines
 * Extensible to new machines should work for 10+ machines
 * Open-source hardware and software
@@ -18,6 +18,7 @@ We have a good size wood shop with a large number of machine tools and it's frus
 
 * Air quality monitoring to control a air purifier
 * Stats page for air quality
+* Speed control for the main extractor? Is this worth doing?
 
 # Known difficulties
 
@@ -33,3 +34,18 @@ Each extra gate you open will create extra paths for air to flow, at some point 
 * prioritise the "most important" path
 * only open the maximum number of ports
 
+## Manual Control of Blast Gates
+
+If the system goes wrong it should be easy to manually override the blast gate actuator and use it manually.
+
+## Blast gate locations
+
+The blast gates are sometimes not physically near the machine.
+
+# Initial Ideas
+
+The system will consist of; central controller, blast gate actuators and machine monitors.
+
+Communication over CAN as it's easy to route to different areas of the room
+
+Power for the leaf nodes will be via POE, the motors shouldn't need that much current.
